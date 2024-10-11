@@ -1,4 +1,3 @@
 export default {
-    landigPage:require("../assets/images/landing.png"),
-  
+    htmlcss:require("../assets/images/htmlcss.png")
 }
