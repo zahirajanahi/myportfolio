@@ -21,7 +21,7 @@ const Home = (props) => {
           </div>
         </nav>
 
-        <section className='flex gap-80 bg-[#faf7f2] pb-32'>
+        <section className='flex justify-evenly bg-[#faf7f2] pb-32'>
           <div>
             <h1 className='text-8xl ps-10 pt-20 text-gray-800 animate__animated animate__fadeInLeft'>
               hi, my name is
