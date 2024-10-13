@@ -1,68 +1,452 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 @font-face {
-    font-family: 'chakra';
-    src: url('../assets/fonts/Chakra_Petch/ChakraPetch-Medium.ttf'),    
+    font-family: 'myfont';
+    src: url('../assets/fonts/PlayfairDisplaySC-Regular.ttf'),    
   }
-  .home{
-    font-family: chakra;
+  .home {
+    font-family: 'myfont', sans-serif;
+    /*background-image: url('../assets/images/Dusty.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: fit-content; */
+ 
   }
-  
 
-.button-54 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
-  cursor: pointer;
-  border: 3px solid;
-  padding: 0.25em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  .home__img {
+    background: url(../assets/images/WhatsApp\ Image\ 2024-10-11\ at\ 15.09.35.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10%;
+    order: 1;
+    justify-self:center;
+    width: 23vw;
+    height: 70vh;
+    animation: profile__animate 8s ease-in-out infinite 1s;
+    margin-top: 60px;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+.tilt-img {
+  width: 23vw;
+  height: 70vh;
+  background-image: url('../assets/images/WhatsApp\ Image\ 2024-10-11\ at\ 15.09.35.jpeg'); /* Replace with actual image path */
+  background-size: cover;
+  background-position: center;
+  transform: rotate(10deg); /* Adjust the angle for the desired tilt */
+  transition: transform 0.3s ease;
+}
+
+.tilt-img:hover {
+  transform: rotate(0deg); /* Optional hover effect to reset the tilt */
+}
+
+/* From Uiverse.io by alexmaracinaru */ 
+.cta {
   position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.button-54:active {
-  box-shadow: 0px 0px 0px 0px;
-  top: 5px;
-  left: 5px;
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
 }
-/* For Webkit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-    width: 12px; /* Standard scrollbar width */
-    height: 12px; /* Height for horizontal scrollbar */
-  }
-  
-  /* Scrollbar track */
-  ::-webkit-scrollbar-track {
-    background: #faf7f2; /* Matches the background color */
-  }
-  
-  /* Scrollbar handle (thumb) */
-  ::-webkit-scrollbar-thumb {
-    background-color: black; /* Black scrollbar handle */
-    border-radius: 9999px; /* Fully rounded using a large value for all edges */
-    border: 3px solid #faf7f2; /* Adds padding around the handle to blend with the background */
-  }
-  
-  /* Scrollbar handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #e4e2a9; /* Slightly lighter color on hover */
-    border: 3px solid #faf7f2; /* Keep border on hover */
-  }
-  
-  /* Customize scrollbar for Firefox */
-  html {
-    scrollbar-width: thin; /* Thin scrollbar */
-    scrollbar-color: black #faf7f2; /* Black thumb with #faf7f2 background for Firefox */
-  }
-  
+
+.cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
 
 
-@media (min-width: 768px) {
-  .button-54 {
-    padding: 0.25em 0.75em;
+
+
+
+
+.layout {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 90px;
+    width: 10px;
+    height: 500vh;
+    border: 1px solid #fff;
+    border-top: none;
+    border-bottom: none;
+    opacity: .15;
+  }
+
+  .box {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    color: #fff;
+    transform-origin: 0% 10%;
+    transform: rotate(-90deg);
+    font-size: 9px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    opacity: .4;
   }
 }
+
+
+
+.social {
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  right: 25px;
+  color: #fff;
+  opacity: .4;
+
+  a {
+    display: inline-block;
+    margin-left: 3px;
+  }
+
+  svg {
+    --fill: #fff;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.cursor {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+  transition: transform .85s cubic-bezier(0, 0.02, 0, 1);
+  display: none;
+  pointer-events: none;
+  
+  @media (pointer: fine) {
+    display: block;
+  }
+}
+
+.cursor2 {
+  --size: 2px;
+  transition-duration: .7s;
+}
+
+/* From Uiverse.io by G4b413l */ 
+.container {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+.card {
+  position: relative;
+  color: #fff;
+  background: #131313;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+
+
+.card_title {
+  font-weight: bold;
+}
+
+.card_content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  
+  width: 100%;
+  padding: 20px;
+  background: #131313;
+  border-top-left-radius: 20px;
+
+  transform: translateY(150px);
+  transition: transform .25s;
+}
+
+.card_content::before {
+  content: '';
+  position: absolute;
+  top: -47px;
+  right: -45px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(-175deg);
+  border-radius: 50%;
+  box-shadow: inset 48px 48px #131313;
+}
+
+.card_title {
+  color: #131313;
+  line-height: 15px;
+}
+
+.card_subtitle {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.card_description {
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.card:hover .card_content {
+  transform: translateY(0);
+}
+
+.card:hover .card_description {
+  opacity: 1;
+  transition-delay: .25s;
+}
+
+
+
+/* From Uiverse.io by mrhyddenn */ 
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 50vw;
+ 
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #986803, #e6a008);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #986803;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
