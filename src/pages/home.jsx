@@ -267,7 +267,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-        <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit SocialGeek</a> </span>
+        <span class="card_subtitle">See My Project in Action. <a href="https://clinquant-klepon-54950b.netlify.app/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit SocialGeek</a> </span>
         <p class="card_description">A React-based social platform where users can create, update, and delete posts with text, images, and videos.
            It includes a carousel for multiple images, a story section, and a responsive friends list with follow/unfollow functionality.</p>
     
@@ -280,7 +280,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-    <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Brew & Bean</a> </span>
+    <span class="card_subtitle">See My Project in Action. <a href="https://coffe-shop-mu-sage.vercel.app/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Brew & Bean</a> </span>
     <p class="card_description">A beautifully designed web application where users can explore and order a variety of coffee products. Built using React, this app offers a seamless shopping experience, allowing users to browse detailed coffee descriptions</p>
     
 </div>
@@ -292,7 +292,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-    <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Delicious</a> </span>
+    <span class="card_subtitle">See My Project in Action. <a href="" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Delicious</a> </span>
         <p class="card_description">A minimalist web application designed to showcase a restaurant's key details, including its menu, chefs, and location. Built with React, the app features a clean and intuitive interface where users can explore the restaurant’s offerings.</p>
     
 </div>
@@ -304,7 +304,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-    <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Fash.</a> </span>
+    <span class="card_subtitle">See My Project in Action. <a href="https://fash-zahira-janahis-projects.vercel.app/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Fash.</a> </span>
         <p class="card_description">An interactive online store built with React, offering users a smooth and intuitive shopping experience. The app allows customers to browse through a range of products with detailed descriptions, images, and prices.ensuring easy navigation and product viewing.</p>
     
 </div>
