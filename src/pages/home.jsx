@@ -36,9 +36,9 @@ const Home = (props) => {
     
 
 
-      <div className='home h-auto text-white bg-black'>
+      <div className='home h-auto text-white  bg-black'>
     
-      <div className='pt-16'>
+      <div className='pt-16 ps-20'>
         
           {/* Animate Zahira Janahi */}
           <motion.h1
@@ -70,7 +70,7 @@ const Home = (props) => {
             End Developer
           </motion.h1>
         </div>
-        <section className='flex'>
+        <section className='flex ps-20'>
             <div className='flex  gap-40'>
 
                   <div className="whoAmI">
@@ -129,7 +129,7 @@ const Home = (props) => {
               
         </section>
     
-        <section className="skills">
+        <section className="skills ps-20">
 
         <div class="layout">
 	<div class="box">High-end, full-service<br />front-end devolopement<br />for lifestyle branding.</div>
@@ -259,7 +259,7 @@ const Home = (props) => {
 
 
 
-  <div class="container ps-10 ">
+  <div class="container ps-4 ">
 <article class="card cardd">
     <div >
         <img src={Images.sg} alt="" className='h-[20vw] w-[50vh] pb-20 ' />
