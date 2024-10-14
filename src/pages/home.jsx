@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useRef , useState} from 'react';
 import '../css/home.css';
 import 'animate.css';
 import { motion } from 'framer-motion';
 import { Images } from "../constant";
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
-//import Carousel from './carousel';
-const Home = (props) => {
+import emailjs from '@emailjs/browser';
 
+
+
+
+const Home = (props) => {
+  const form = useRef();
+  const [message, setMessage] = useState('');
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_jjholjd', 'template_5otd44n', form.current, {
+        publicKey: 'SGSsbQH6QTgD-nzNq',
+      })
+      .then(
+        (result) => {
+          console.log('SUCCESS!', result.text);
+          setMessage('Email sent successfully!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setMessage('Failed to send email. Please try again.'); 
+        },
+      );
+  };
   
   return (
     <>
@@ -314,27 +337,32 @@ const Home = (props) => {
    
    </section>
     
-<section className='h-[100vh] pt-20'>
+   <section className='h-[100vh] pt-20'>
   <div className='ps-28 text-yellow-600 text-3xl'><h1>Contact me</h1></div>
   <p className='ps-72 pt-10'>- Feel free to contact me any time. I will get back to you as soon as I can -</p>
-  <form action="" className='ps-64 pt-14'>
+  <form action="" className='ps-64 pt-14' ref={form} onSubmit={sendEmail}>
     <div className='relative'>
-      <FiLinkedin className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+      <a href="https://www.linkedin.com/in/zahira-janahi-4a4590263/" target="_blank" rel="noopener noreferrer">
+        <FiLinkedin className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+      </a>
       <div className="form__group field">
-        <input type="input" className="form__field" placeholder="Name" required=""/>
+        <input type="input" name='name' className="form__field" placeholder="Name" required=""/>
         <label htmlFor="name" className="form__label">Name</label>
       </div>
     </div>
     <div className='relative mt-5'>
-      <FiGithub className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+      <a href="https://github.com/zahirajanahi" target="_blank" rel="noopener noreferrer">
+        <FiGithub className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+      </a>
       <div className="form__group field">
-        <input type="input" className="form__field" placeholder="Email" required=""/>
+        <input type="input" className="form__field" placeholder="Email" name='email' required=""/>
         <label htmlFor="email" className="form__label">Email</label>
       </div>
     </div>
+    
     <div className='relative mt-5'>
       <div className="form__group field">
-        <textarea className="form__field" placeholder="Message" required=""></textarea>
+        <textarea className="form__field" placeholder="Message" name='message' required=""></textarea>
         <label htmlFor="message" className="form__label">Message</label>
       </div>
     </div>
@@ -343,7 +371,9 @@ const Home = (props) => {
     <button className='ms-64 border-[1px] border-yellow-600 mt-10 px-4 py-3 rounded-full'>Download CV</button>
     <button className='text-yellow-600 ms-[480px]'>Send</button>
   </div>
+  {message && <p className="message-feedback">{message}</p>}
 </section>
+
 
 
 
