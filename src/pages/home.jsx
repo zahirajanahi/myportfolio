@@ -319,6 +319,8 @@ const Home = (props) => {
   <p className='ps-72 pt-10'>- Feel free to contact me any time. I will get back to you as soon as I can -</p>
   <form action="" className='ps-64 pt-14'>
     <div className='relative'>
+      <a href="https://www.linkedin.com/in/zahira-janahi-4a4590263/"> <FiLinkedin className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+      </a>
       <FiLinkedin className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
       <div className="form__group field">
         <input type="input" className="form__field" placeholder="Name" required=""/>
@@ -326,6 +328,7 @@ const Home = (props) => {
       </div>
     </div>
     <div className='relative mt-5'>
+    <a href="https://github.com/zahirajanahi"> <FiGithub className='absolute left-[60vw] top-4 text-gray-400 text-2xl' /></a>
       <FiGithub className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
       <div className="form__group field">
         <input type="input" className="form__field" placeholder="Email" required=""/>
