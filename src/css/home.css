@@ -370,14 +370,83 @@
 
 
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Track background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffc903; /* Scrollbar thumb color */
+  border-radius: 10px;  /* Rounded corners for thumb */
+  border: 2px solid #1a1a1a; /* Adds space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffc903; /* Darker shade on hover */
+}
 
 
 
 
 
 
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
+}
+
+.typewriter {
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+  border-right: 3px solid black; /* Cursor */
+  white-space: nowrap;
+  width: 0;
+  animation: typewriter 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-100px); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  0% { transform: translateX(100px); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(0); }
+}
+
+.phone1 {
+  animation: slideIn 4s ease-out infinite;
+}
+
+.phone2 {
+  animation: slideOut 4s ease-out infinite;
+}
 
 
+/* Hide the span initially */
+.hover-span {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show the span when the icon is hovered */
+.icon-wrapper:hover .hover-span {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 

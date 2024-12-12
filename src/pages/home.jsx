@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useRef , useState} from 'react';
 import '../css/home.css';
 import 'animate.css';
 import { motion } from 'framer-motion';
 import { Images } from "../constant";
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
-//import Carousel from './carousel';
-const Home = (props) => {
+import emailjs from '@emailjs/browser';
+import { PiFigmaLogoFill } from 'react-icons/pi';
+import { SiGmail } from 'react-icons/si';
 
+
+
+
+const Home = (props) => {
+  const form = useRef();
+  const [message, setMessage] = useState('');
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_jjholjd', 'template_5otd44n', form.current, {
+        publicKey: 'SGSsbQH6QTgD-nzNq',
+      })
+      .then(
+        (result) => {
+          console.log('SUCCESS!', result.text);
+          setMessage('Email sent successfully!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setMessage('Failed to send email. Please try again.'); 
+        },
+      );
+  };
   
   return (
     <>
     
 
 
-      <div className='home h-auto text-white bg-black'>
+      <div className='home h-auto text-white  bg-black'>
     
-      <div className='pt-16'>
+      <div className='pt-16 ps-20'>
         
           {/* Animate Zahira Janahi */}
           <motion.h1
@@ -47,7 +72,7 @@ const Home = (props) => {
             End Developer
           </motion.h1>
         </div>
-        <section className='flex'>
+        <section className='flex ps-20'>
             <div className='flex  gap-40'>
 
                   <div className="whoAmI">
@@ -106,7 +131,7 @@ const Home = (props) => {
               
         </section>
     
-        <section className="skills">
+        <section className="skills ps-20">
 
         <div class="layout">
 	<div class="box">High-end, full-service<br />front-end devolopement<br />for lifestyle branding.</div>
@@ -158,7 +183,7 @@ const Home = (props) => {
       <div className="border-2 border-yellow-500 w-2 h-2 rounded-full bg-yellow-500"></div>
     </div>
           </div>
-          <div className='text-center pb-10 "'>-The technologies I rely on to turn ideas into reality-</div>
+          <div className='text-center pb-10 typewriter'>-The technologies I rely on to turn ideas into reality-</div>
   <div className="flex gap-10 ps-20">
     {/* Card 1 */}
     <div className="relative w-40 h-40 p-6 m-6 bg-[#131313] text-white animate-float">
@@ -236,7 +261,7 @@ const Home = (props) => {
 
 
 
-  <div class="container ps-10 ">
+  <div class="container ps-4 ">
 <article class="card cardd">
     <div >
         <img src={Images.sg} alt="" className='h-[20vw] w-[50vh] pb-20 ' />
@@ -244,7 +269,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-        <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit SocialGeek</a> </span>
+        <span class="card_subtitle">See My Project in Action. <a href="https://clinquant-klepon-54950b.netlify.app/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit SocialGeek</a> </span>
         <p class="card_description">A React-based social platform where users can create, update, and delete posts with text, images, and videos.
            It includes a carousel for multiple images, a story section, and a responsive friends list with follow/unfollow functionality.</p>
     
@@ -257,7 +282,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-    <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Brew & Bean</a> </span>
+    <span class="card_subtitle">See My Project in Action. <a href="https://coffe-shop-mu-sage.vercel.app/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Brew & Bean</a> </span>
     <p class="card_description">A beautifully designed web application where users can explore and order a variety of coffee products. Built using React, this app offers a seamless shopping experience, allowing users to browse detailed coffee descriptions</p>
     
 </div>
@@ -269,7 +294,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-    <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Delicious</a> </span>
+    <span class="card_subtitle">See My Project in Action. <a href="" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Delicious</a> </span>
         <p class="card_description">A minimalist web application designed to showcase a restaurant's key details, including its menu, chefs, and location. Built with React, the app features a clean and intuitive interface where users can explore the restaurant’s offerings.</p>
     
 </div>
@@ -281,7 +306,7 @@ const Home = (props) => {
 
 <div class="card_content">
     <span class="card_title">This is a Title</span>
-    <span class="card_subtitle">See My Project in Action. <a href="https://www.pinterest.fr/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Fash.</a> </span>
+    <span class="card_subtitle">See My Project in Action. <a href="https://fash-zahira-janahis-projects.vercel.app/" className='text-yellow-600'  target="_blank" rel="noopener noreferrer">Visit Fash.</a> </span>
         <p class="card_description">An interactive online store built with React, offering users a smooth and intuitive shopping experience. The app allows customers to browse through a range of products with detailed descriptions, images, and prices.ensuring easy navigation and product viewing.</p>
     
 </div>
@@ -308,45 +333,68 @@ const Home = (props) => {
       smooth navigation and functionality <br />
       without compromising aesthetics</div>
     </div>
-  <img src={Images.phone} alt=""  className=' h-[80vh] '/> 
-  <img src={Images.phone2} alt="" className='h-[95vh]  pt-40  ' /> 
+  <img src={Images.phone} alt=""  className=' h-[80vh] phone1'/> 
+  <img src={Images.phone2} alt="" className='h-[95vh]  pt-40  phone2' /> 
   </div>
    
    </section>
     
-<section className='h-[100vh] pt-20'>
-  <div className='ps-28 text-yellow-600 text-3xl'><h1>Contact me</h1></div>
-  <p className='ps-72 pt-10'>- Feel free to contact me any time. I will get back to you as soon as I can -</p>
-  <form action="" className='ps-64 pt-14'>
+   <section className='h-[100vh] pt-20'>
+  <div className='ps-28 text-yellow-600 text-3xl'>
+    <h1>Contact me</h1>
+  </div>
+  
+  <p className='ps-72 pt-10 typewriter'>
+    - Feel free to contact me any time. I will get back to you as soon as I can -
+  </p>
+  
+  <form action="" className='ps-64 pt-14' ref={form} onSubmit={sendEmail}>
+    {/* LinkedIn Section */}
     <div className='relative'>
-      <a href="https://www.linkedin.com/in/zahira-janahi-4a4590263/"> <FiLinkedin className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+      <a href="https://www.linkedin.com/in/zahira-janahi-4a4590263/" target="_blank" rel="noopener noreferrer" className='icon-wrapper'>
+        <FiLinkedin className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+        <span className='absolute left-[62vw] top-4 text-white opacity-0 hover-span'>Zahira-janahi</span>
       </a>
-      <FiLinkedin className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
       <div className="form__group field">
-        <input type="input" className="form__field" placeholder="Name" required=""/>
+        <input type="input" name='name' className="form__field" placeholder="Name" required=""/>
         <label htmlFor="name" className="form__label">Name</label>
       </div>
     </div>
+    
+    {/* GitHub Section */}
     <div className='relative mt-5'>
-    <a href="https://github.com/zahirajanahi"> <FiGithub className='absolute left-[60vw] top-4 text-gray-400 text-2xl' /></a>
-      <FiGithub className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+      <a href="https://github.com/zahirajanahi" target="_blank" rel="noopener noreferrer" className='icon-wrapper'>
+        <FiGithub className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+        <span className='absolute left-[62vw] top-4 text-white  opacity-0 hover-span'>zahirajanahi</span>
+      </a>
       <div className="form__group field">
-        <input type="input" className="form__field" placeholder="Email" required=""/>
+        <input type="input" className="form__field" placeholder="Email" name='email' required=""/>
         <label htmlFor="email" className="form__label">Email</label>
       </div>
     </div>
+    
+    {/* Email Section */}
     <div className='relative mt-5'>
+      <a href="mailto:jude75418@gmail.com" target="_blank" rel="noopener noreferrer" className='icon-wrapper'>
+        <SiGmail className='absolute left-[60vw] top-4 text-gray-400 text-2xl' />
+        <span className='absolute left-[62vw] top-4 text-white opacity-0 hover-span'>jude75418@gmail.com</span>
+      </a>
       <div className="form__group field">
-        <textarea className="form__field" placeholder="Message" required=""></textarea>
+        <textarea className="form__field" placeholder="Message" name='message' required=""></textarea>
         <label htmlFor="message" className="form__label">Message</label>
       </div>
     </div>
   </form>
+  
   <div className="buttons">
     <button className='ms-64 border-[1px] border-yellow-600 mt-10 px-4 py-3 rounded-full'>Download CV</button>
     <button className='text-yellow-600 ms-[480px]'>Send</button>
   </div>
+  
+  {message && <p className="message-feedback">{message}</p>}
 </section>
+
+
 
 
 
