@@ -7,7 +7,7 @@ export default {
     cofee:require('../assets/images/coffee.png'),
     sg:require('../assets/images/socialGeek.png'),
     fsh:require('../assets/images/fash.png'),
-    delicious:require('../assets/images/deliciouns.png'),
+    delicious:require('../assets/images/violence.png'),
     phone:require('../assets/images/Cdfghjapture-removebg-preview.png'),
     phone2:require('../assets/images/phone-removebg-preview.png'),
 }
