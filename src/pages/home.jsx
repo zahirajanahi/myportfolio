@@ -232,7 +232,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Project Cards */}
       <section className="projects px-4 md:px-0">
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 ps-4">
           {[
@@ -403,7 +402,7 @@ const Home = () => {
   </div> */}
   
   </section>
-
+ 
       {/* Cursor Elements */}
       <div className="cursor"></div>
       <div className="cursor cursor2"></div>

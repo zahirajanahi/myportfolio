@@ -369,7 +369,6 @@
 
 
 
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;  /* Width of the scrollbar */
@@ -447,6 +446,24 @@
   opacity: 1;
   visibility: visible;
 }
+
+@media (max-width: 768px) {
+  .projects .container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .projects .card {
+    width: 100% !important;
+  }
+  
+  .projects img {
+    height: 300px !important;
+    width: 100% !important;
+  }
+}
+
+
 
 
 
