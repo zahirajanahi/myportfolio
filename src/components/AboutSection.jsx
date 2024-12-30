@@ -88,10 +88,10 @@ const AboutSection = () => {
           More than <span className='text-white'>2 years</span> experience.
         </motion.p>
       </motion.div>
-      <div className='flex flex-col lg:flex-row justify-between items-center pb-10'>
+      <div className='flex flex-col lg:flex-row justify-between items-center pb-10  ms-20 '>
         <div className='w-full lg:w-2/3 space-y-5'>
           <motion.div
-            className='bg-[#f5f5f5] w-full md:w-[42vw] h-auto rounded-3xl px-6 py-4 text-gray-700 text-lg'
+            className='bg-[#f5f5f5] w-full md:w-[42vw] h-auto rounded-3xl px-6 py-4 text-gray-700 text-lg mt-10 '
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
@@ -134,7 +134,7 @@ const AboutSection = () => {
             rotate: -2,
             transition: { duration: 0.3 }
           }}
-          className="mt-10 lg:mt-0"
+          className="mt-10 "
         >
           <img src={Images.me} alt="" className='h-auto lg:h-[60vh] w-auto rounded-3xl lg:me-40' />
         </motion.div>

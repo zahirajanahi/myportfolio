@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <>
-      <div className="ms-28">
+      <div className="ms-20">
         <div className=''>
           <div className='flex gap-32 items-center'>
             <motion.h1 
